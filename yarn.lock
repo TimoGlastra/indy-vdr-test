@@ -316,22 +316,22 @@ https-proxy-agent@^5.0.0:
     agent-base "6"
     debug "4"
 
-indy-vdr-test-nodejs@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/indy-vdr-test-nodejs/-/indy-vdr-test-nodejs-0.1.1.tgz#5dee9e49c5fe290fd36087e2e398eebb7b139225"
-  integrity sha512-LL7F+2tAazbVfzlAPh39S2VhGP56x+A08XU5wBPLZmT6MXoJxapJ3LX2ub+Hmz35adKDMfCVsHYEHxqTkVxvlA==
+indy-vdr-test-nodejs@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/indy-vdr-test-nodejs/-/indy-vdr-test-nodejs-0.1.2.tgz#5dd3eefb1bbb1cba0f924714307e856a590808ae"
+  integrity sha512-N6aVrnKB5hecE8BohK4ZcSxMlralZaSk7XUpC/TPcLsnevCz/7yt2ZdXiKuURs7OXzs52X50EGfSNZpPsZY8cQ==
   dependencies:
     "@mapbox/node-pre-gyp" "^1.0.10"
     ffi-napi "^4.0.3"
-    indy-vdr-test-shared "0.1.1"
+    indy-vdr-test-shared "0.1.2"
     ref-array-di "^1.2.2"
     ref-napi "^3.0.3"
     ref-struct-di "^1.1.1"
 
-indy-vdr-test-shared@0.1.1, indy-vdr-test-shared@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/indy-vdr-test-shared/-/indy-vdr-test-shared-0.1.1.tgz#111c9c81edd953bfa29668f7cfb7150e501087c8"
-  integrity sha512-hHlsUtp9W3A1no6EBu7alXI4oxBcNJXgOct13Ma3TBB4xcH2xqK3V9fHdDRUg/yrvM1ETPoErny57QsmTcbUQw==
+indy-vdr-test-shared@0.1.2, indy-vdr-test-shared@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/indy-vdr-test-shared/-/indy-vdr-test-shared-0.1.2.tgz#eb40242c382c98ac3a1b28e347fec3a6af26bb98"
+  integrity sha512-7Nt/Lm9vpMuauLfoKAHXDjjEFQ5qrqF2wqNuxfJbhWWGpJ50BtKiuSA7eEt4emBFfZRRByfp6WAdMAAjLQM5YQ==
 
 inflight@^1.0.4:
   version "1.0.6"

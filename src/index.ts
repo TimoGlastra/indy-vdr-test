@@ -1,10 +1,4 @@
-import { indyVdrNodeJS } from "indy-vdr-test-nodejs";
-import {
-  registerIndyVdr,
-  GetSchemaRequest,
-  PoolCreate,
-  GetSchemaResponse,
-} from "indy-vdr-test-shared";
+import { GetSchemaRequest, PoolCreate } from "indy-vdr-test-nodejs";
 
 export const SOVRIN_GENESIS_TRANSACTION_BUILDER_NET = `
 {"reqSignature":{},"txn":{"data":{"data":{"alias":"FoundationBuilder","blskey":"3gmhmqpPLqznZF3g3niodaHjbpsB6TEeE9SpgXgBnZJLmXgeRzJqTLajVwbhxrkomJFTFU4ohDC4ZRXKbUPCQywJuPAQnst8XBtCFredMECn4Z3goi1mNt5QVRdU8Ue2xMSkdLpsQMjCsNwYUsBguwXYUQnDXQXnHqRkK9qrivucQ5Z","blskey_pop":"RHWacPhUNc9JWsGNdmWYHrAvvhsow399x3ttNKKLDpz9GkxxnTKxtiZqarkx4uP5ByTwF4kM8nZddFKWuzoKizVLttALQ2Sc2BNJfRzzUZMNeQSnESkKZ7U5vE2NhUDff6pjANczrrDAXd12AjSG61QADWdg8CVciZFYtEGmKepwzP","client_ip":"35.161.146.16","client_port":"9702","node_ip":"50.112.53.5","node_port":"9701","services":["VALIDATOR"]},"dest":"GVvdyd7Y6hsBEy5yDDHjqkXgH8zW34K74RsxUiUCZDCE"},"metadata":{"from":"V5qJo72nMeF7x3ci8Zv2WP"},"type":"0"},"txnMetadata":{"seqNo":1,"txnId":"fe991cd590fff10f596bb6fe2362229de47d49dd50748e38b96f368152be29c7"},"ver":"1"}
@@ -13,7 +7,6 @@ export const SOVRIN_GENESIS_TRANSACTION_BUILDER_NET = `
 {"reqSignature":{},"txn":{"data":{"data":{"alias":"danube","blskey":"3Vt8fxn7xg8n8pR872cvGWNuR7STFzFSPMftX96zF6871wYVTR27aspxGSeEtx9wj8g4D3GdCxHJbQ4FsxQz6TATQswiiZfxAVNjLLUci8WSH4t1GPx9CvGXB2uzDfVnnJyhhnASxJEbvykLUBBFG3fW4tMQixujpowUADz5jHm427u","blskey_pop":"RJpXXLkjRRv9Lk8tJz8LTkhhC7RWjHQcB9CG8J8U8fXT6arTDMYc62zXtToBAmGkGu8Udsmo3Hh7mv4KB9JAf8ufGY9WsnppCVwar7zEXyBfLpCnDhvVcBAzkhRpHmqHygN24DeBu9aH6tw4uXxVJvRRGSbPtxjWa379BmfQWzXHCb","client_ip":"207.180.207.73","client_port":"9702","node_ip":"173.249.14.196","node_port":"9701","services":["VALIDATOR"]},"dest":"52muwfE7EjTGDKxiQCYWr58D8BcrgyKVjhHgRQdaLiMw"},"metadata":{"from":"VbPQNHsvoLZdaNU7fTBeFx"},"type":"0"},"txnMetadata":{"seqNo":4,"txnId":"ebf340b317c044d970fcd0ca018d8903726fa70c8d8854752cd65e29d443686c"},"ver":"1"}
 `;
 
-registerIndyVdr({ vdr: indyVdrNodeJS });
 const pool = new PoolCreate({
   parameters: { transactions: SOVRIN_GENESIS_TRANSACTION_BUILDER_NET },
 });
@@ -25,8 +18,6 @@ const request = new GetSchemaRequest({
   schemaId: "J6nTnUo3YLayzc2GUUctb1:2:MyName:1.0",
 });
 
-pool
-  .submitRequest<GetSchemaResponse>({ requestHandle: request.handle })
-  .then((response) => {
-    console.log(response);
-  });
+pool.submitRequest(request).then((response) => {
+  console.log(response);
+});
